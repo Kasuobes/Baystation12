@@ -1,4 +1,4 @@
-/obj/structure/closet/secure_closet/scientist1
+/obj/structure/closet/secure_closet/scientist
 	name = "scientist's locker"
 	req_access = list(access_tox)
 	icon_state = "secureres1"
@@ -23,7 +23,7 @@
 		new /obj/item/clothing/mask/gas(src)
 		return
 		
-/obj/structure/closet/secure_closet/scientist2
+/obj/structure/closet/secure_closet/xenobio
 	name = "xenobiologist's locker"
 	req_access = list(access_xenobiology)
 	icon_state = "secureres1"
