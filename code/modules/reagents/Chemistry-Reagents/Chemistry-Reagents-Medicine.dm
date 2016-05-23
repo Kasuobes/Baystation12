@@ -519,7 +519,7 @@
 	reagent_state = LIQUID
 	color = "#181818"
 	metabolism = REM * 0.01
-	overdose = REAGENTS_OVERDOSE
+	overdose = REAGENTS_OVERDOSE * 0.5
 	scannable = 1	
 	data = 0
 
@@ -527,11 +527,11 @@
 	if(alien == IS_DIONA)
 		return
 	M.add_chemical_effect(CE_PULSE, 1)
-	if(volume <= 0.1 && data != -1)
+	if(volume <= 0.15 && data != -1)
 		data = -1
 		M << "<span class='warning'>You grow antsy, craving for another puff of smoke...</span>"
 	else
-		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY / 3)
+		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY * 0.33)
 			data = world.time
 			M << "<span class='notice'>You feel invigorated and calm.</span>"					
 
