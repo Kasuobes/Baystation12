@@ -517,7 +517,7 @@
 	description = "Stimulates and relaxes the mind and body."
 	taste_description = "pepperiness"
 	reagent_state = LIQUID
-	color = "#DDDDDD"
+	color = "#181818"
 	metabolism = 0.01
 	overdose = REAGENTS_OVERDOSE * 2
 	scannable = 1	
@@ -526,6 +526,7 @@
 /datum/reagent/nicotine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
+	M.add_chemical_effect(CE_PULSE, 1)		
 	if(volume <= 0.1 && data != -1)
 		data = -1
 		M << "<span class='warning'>You grow antsy, craving for another puff of smoke...</span>"
