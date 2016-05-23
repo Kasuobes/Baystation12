@@ -1,4 +1,4 @@
-	/* General medicine */
+/* General medicine */
 
 /datum/reagent/inaprovaline
 	name = "Inaprovaline"
