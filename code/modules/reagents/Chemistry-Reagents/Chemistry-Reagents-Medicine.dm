@@ -510,6 +510,29 @@
 			else
 				M << "<span class='warning'>Your mind breaks apart...</span>"
 				M.hallucination += 200
+				
+/datum/reagent/nicotine
+	name = "Nicotine"
+	id = "nicotine"
+	description = "Stimulates and relaxes the mind and body."
+	taste_description = "pepperiness"
+	reagent_state = LIQUID
+	color = "#DDDDDD"
+	metabolism = 0.01
+	overdose = REAGENTS_OVERDOSE * 2
+	scannable = 1	
+	data = 0
+
+/datum/reagent/nicotine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien == IS_DIONA)
+		return
+	if(volume <= 0.1 && data != -1)
+		data = -1
+		M << "<span class='warning'>You grow antsy, craving for another puff of smoke...</span>"
+	else
+		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
+			data = world.time
+			M << "<span class='notice'>You feel invigorated and calm.</span>"				
 
 /datum/reagent/rezadone
 	name = "Rezadone"
