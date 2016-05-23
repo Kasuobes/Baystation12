@@ -1,4 +1,4 @@
-/* General medicine */
+	/* General medicine */
 
 /datum/reagent/inaprovaline
 	name = "Inaprovaline"
@@ -515,25 +515,25 @@
 	name = "Nicotine"
 	id = "nicotine"
 	description = "Stimulates and relaxes the mind and body."
-	taste_description = "pepperiness"
+	taste_description = "smoke"
 	reagent_state = LIQUID
 	color = "#181818"
-	metabolism = 0.01
-	overdose = REAGENTS_OVERDOSE * 2
+	metabolism = REM * 0.01
+	overdose = REAGENTS_OVERDOSE
 	scannable = 1	
 	data = 0
 
 /datum/reagent/nicotine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
 		return
-	M.add_chemical_effect(CE_PULSE, 1)		
+	M.add_chemical_effect(CE_PULSE, 1)
 	if(volume <= 0.1 && data != -1)
 		data = -1
 		M << "<span class='warning'>You grow antsy, craving for another puff of smoke...</span>"
 	else
-		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
+		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY / 3)
 			data = world.time
-			M << "<span class='notice'>You feel invigorated and calm.</span>"				
+			M << "<span class='notice'>You feel invigorated and calm.</span>"					
 
 /datum/reagent/rezadone
 	name = "Rezadone"
