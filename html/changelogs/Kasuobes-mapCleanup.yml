@@ -37,3 +37,4 @@ delete-after: True
 changes: 
   - maptweak: "Minor furniture adjustments to forensics, xenobiology and xenobotany laboratories."
   - rscadd: "Added backpacks to xenoarcheology lockers."
+  - rscadd: "Added clipboards to science lockers."
