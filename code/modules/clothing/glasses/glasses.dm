@@ -1,4 +1,3 @@
-
 /obj/item/clothing/glasses
 	name = "glasses"
 	icon = 'icons/obj/clothing/glasses.dmi'
@@ -13,6 +12,8 @@
 	var/activation_sound = 'sound/items/goggles_charge.ogg'
 	var/obj/screen/overlay = null
 	var/obj/item/clothing/glasses/hud/hud = null	// Hud glasses, if any
+	var/can_mod = 0
+	var/unlocked = 0
 
 /obj/item/clothing/glasses/New()
 	..()
@@ -23,6 +24,21 @@
 	qdel(hud)
 	hud = null
 	. = ..()
+
+/obj/item/clothing/glasses/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(isscrewdriver(W) && can_mod)
+		unlocked = !unlocked
+		if(unlocked)
+			to_chat(user, "<span class='notice'>You loosen the screws on \the [src].</span>")
+		else
+			to_chat(user, "<span class='notice'>You tighten the screws on \the [src].</span>")
+	..()
+
+/obj/item/clothing/glasses/modular
+	name = "modular glasses frame"
+	desc = "A frame for modular glasses."
+	var/obj/item/clothing/glasses/modular/a = null
+	var/obj/item/clothing/glasses/modular/b = null
 
 /obj/item/clothing/glasses/attack_self(mob/user)
 	if(toggleable && !user.incapacitated())
