@@ -15,6 +15,10 @@ obj/machinery/recharger
 	var/icon_state_charging = "recharger1"
 	var/icon_state_idle = "recharger0" //also when unpowered
 	var/portable = 1
+	var/insertable = 1
+	var/wireless = 0
+	var/range = 0
+	var/charge_multiplier = 1
 
 obj/machinery/recharger/attackby(obj/item/weapon/G as obj, mob/user as mob)
 	if(istype(user,/mob/living/silicon))
@@ -24,7 +28,7 @@ obj/machinery/recharger/attackby(obj/item/weapon/G as obj, mob/user as mob)
 	for (var/allowed_type in allowed_devices)
 		if (istype(G, allowed_type)) allowed = 1
 
-	if(allowed)
+	if(allowed && insertable)
 		if(charging)
 			to_chat(user, "<span class='warning'>\A [charging] is already charging here.</span>")
 			return
@@ -83,6 +87,12 @@ obj/machinery/recharger/process()
 		icon_state = icon_state_idle
 		return
 
+	if(wireless)
+		for(var/D in allowed_devices)
+			var/obj/DW = locate() in range(src.range, src)
+			if(DW)
+				charging = DW
+
 	if(!charging)
 		update_use_power(1)
 		icon_state = icon_state_idle
@@ -90,7 +100,7 @@ obj/machinery/recharger/process()
 		var/cell = charging
 		if(istype(charging, /obj/item/device/suit_sensor_jammer))
 			var/obj/item/device/suit_sensor_jammer/J = charging
-			charging = J.bcell
+			cell = J.bcell
 		else if(istype(charging, /obj/item/weapon/melee/baton))
 			var/obj/item/weapon/melee/baton/B = charging
 			cell = B.bcell
@@ -114,7 +124,7 @@ obj/machinery/recharger/process()
 			var/obj/item/weapon/cell/C = cell
 			if(!C.fully_charged())
 				icon_state = icon_state_charging
-				C.give(active_power_usage*CELLRATE)
+				C.give(active_power_usage*charge_multiplier*CELLRATE)
 				update_use_power(2)
 			else
 				icon_state = icon_state_charged
@@ -152,7 +162,6 @@ obj/machinery/recharger/update_icon()	//we have an update_icon() in addition to 
 obj/machinery/recharger/wallcharger
 	name = "wall recharger"
 	desc = "A heavy duty wall recharger specialized for energy weaponry."
-	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "wrecharger0"
 	active_power_usage = 50 KILOWATTS	//It's more specialized than the standalone recharger (guns and batons only) so make it more powerful
 	allowed_devices = list(/obj/item/weapon/gun/magnetic/railgun, /obj/item/weapon/gun/energy, /obj/item/weapon/melee/baton)
@@ -160,3 +169,21 @@ obj/machinery/recharger/wallcharger
 	icon_state_charging = "wrecharger1"
 	icon_state_idle = "wrecharger0"
 	portable = 0
+
+
+
+obj/machinery/recharger/area_recharger //can't find a better place to put it
+	name = "area recharger"
+	desc = "A heavy duty wireless recharger for specialized energy-based technology."
+	icon_state = "recharger0"
+	icon_state_charged = "recharger2"
+	icon_state_charging = "recharger1"
+	icon_state_idle = "recharger0"
+	anchored = 0
+	use_power = 1
+	insertable = 0
+	idle_power_usage = 10
+	active_power_usage = 30 KILOWATTS
+	wireless = 1
+	range = 2
+	charge_multiplier = 0.5
