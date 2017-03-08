@@ -1,4 +1,4 @@
-"aa" = (/turf/space,/area/space)
+"aa" = (/turf/space/empty,/area/space)
 "ab" = (/obj/machinery/light{dir = 4; icon_state = "tube1"},/turf/space,/area/ship/scrap/command)
 "ac" = (/obj/machinery/computer/shuttle_control/explore/bearcat,/obj/effect/floor_decal/corner/beige{icon_state = "corner_white"; dir = 6},/turf/simulated/floor/tiled,/area/ship/scrap/shuttle/outgoing)
 "ad" = (/obj/structure/table/standard,/obj/machinery/light,/obj/item/device/radio,/obj/item/device/radio/intercom{pixel_y = -32},/obj/machinery/atmospherics/unary/vent_pump{icon_state = "off"; dir = 4; layer = 2.4; level = 2},/obj/item/toy/figure/captain,/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_x = 0; pixel_y = -32},/turf/simulated/floor/tiled/dark,/area/ship/scrap/command)

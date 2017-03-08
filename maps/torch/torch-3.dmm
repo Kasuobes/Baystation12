@@ -1,4 +1,4 @@
-"aa" = (/turf/space,/area/space)
+"aa" = (/turf/space/empty,/area/space)
 "ab" = (/turf/space,/area/shuttle/petrov/away)
 "ac" = (/turf/space,/area/rescue_base/seconddeck)
 "ad" = (/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/space)

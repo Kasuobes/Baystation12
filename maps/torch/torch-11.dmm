@@ -1,7 +1,7 @@
 "aa" = (/obj/effect/step_trigger/teleporter/random{affect_ghosts = 1; name = "escapeshuttle_leave"; teleport_x = 25; teleport_x_offset = 245; teleport_y = 25; teleport_y_offset = 245; teleport_z = 6; teleport_z_offset = 6},/turf/space{icon_state = "black"},/area/space)
 "ab" = (/obj/effect/step_trigger/teleporter/random{affect_ghosts = 1; name = "escapeshuttle_leave"; teleport_x = 25; teleport_x_offset = 245; teleport_y = 25; teleport_y_offset = 245; teleport_z = 6; teleport_z_offset = 6},/obj/effect/step_trigger/teleporter/random{affect_ghosts = 1; name = "escapeshuttle_leave"; teleport_x = 25; teleport_x_offset = 245; teleport_y = 25; teleport_y_offset = 245; teleport_z = 6; teleport_z_offset = 6},/turf/space{icon_state = "black"},/area/space)
 "ac" = (/turf/space{icon_state = "black"},/area/space)
-"ad" = (/turf/space,/area/space)
+"ad" = (/turf/space/empty,/area/space)
 "ae" = (/turf/space/transit/north,/area/space)
 "af" = (/turf/space/transit/north,/area/space)
 "ag" = (/turf/space/transit/north,/area/space)

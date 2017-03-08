@@ -1,4 +1,4 @@
-"aa" = (/turf/space,/area/space)
+"aa" = (/turf/space/empty,/area/space)
 "ab" = (/turf/unsimulated/mask,/area/mine/unexplored)
 "ac" = (/turf/space,/area/calypso_hangar/mining)
 "ad" = (/turf/space,/area/guppy_hangar/mining)

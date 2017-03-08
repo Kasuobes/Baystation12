@@ -1,4 +1,4 @@
-"a" = (/turf/space,/area/space)
+"a" = (/turf/space/empty,/area/space)
 "b" = (/turf/simulated/wall,/area/constructionsite)
 "c" = (/turf/simulated/floor/tiled,/area/constructionsite)
 "d" = (/obj/machinery/light{dir = 1},/turf/simulated/floor/tiled,/area/constructionsite)

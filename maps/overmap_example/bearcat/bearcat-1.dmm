@@ -1,4 +1,4 @@
-"aa" = (/turf/space,/area/space)
+"aa" = (/turf/space/empty,/area/space)
 "ab" = (/obj/structure/window/reinforced{dir = 4},/turf/space,/area/space)
 "ac" = (/obj/machinery/door/airlock/external/bolted/cycling{id_tag = "cargo_out"},/obj/machinery/access_button/airlock_exterior{master_tag = "cargo"; pixel_x = 18; pixel_y = 17},/turf/simulated/floor/plating,/area/ship/scrap/cargo/lower)
 "ad" = (/obj/structure/window/reinforced{dir = 8},/turf/space,/area/space)

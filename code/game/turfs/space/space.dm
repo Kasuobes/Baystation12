@@ -10,6 +10,9 @@
 	var/keep_sprite = 0
 //	heat_capacity = 700000 No.
 
+/turf/space/empty/New()
+	//this is intentionally empty
+
 /turf/space/New()
 	if((icon_state == "0") && (!keep_sprite))
 		icon_state = "[((x + y) ^ ~(x * y)) % 25]"

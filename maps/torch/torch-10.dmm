@@ -1,5 +1,5 @@
 "aaa" = (/turf/unsimulated/wall,/area/space)
-"aab" = (/turf/space,/area/space)
+"aab" = (/turf/space/empty,/area/space)
 "aac" = (/obj/structure/window/reinforced/crescent,/turf/unsimulated/wall,/area/space)
 "aad" = (/turf/unsimulated/mineral,/area/rescue_base/base)
 "aae" = (/turf/unsimulated/wall,/area/rescue_base/base)

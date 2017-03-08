@@ -2,7 +2,7 @@
 "ao" = (/obj/effect/step_trigger/teleporter/random/admin,/turf/space/transit/north,/area/space)
 "aK" = (/obj/effect/step_trigger/teleporter/random/admin,/turf/space/transit/east,/area/space)
 "aL" = (/turf/space{icon_state = "black"},/area/space)
-"aM" = (/turf/space,/area/space)
+"aM" = (/turf/space/empty,/area/space)
 "aN" = (/obj/structure/window/reinforced/crescent,/turf/unsimulated/wall,/area/space)
 "aO" = (/turf/unsimulated/floor{icon_state = "plating"; name = "plating"},/area/prison/solitary)
 "aP" = (/obj/structure/bed,/turf/unsimulated/floor{icon_state = "plating"; name = "plating"},/area/prison/solitary)

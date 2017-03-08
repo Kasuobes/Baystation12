@@ -1,4 +1,4 @@
-"aaa" = (/turf/space,/area/space)
+"aaa" = (/turf/space/empty,/area/space)
 "aab" = (/turf/space,/area/syndicate_station/north)
 "aac" = (/obj/effect/landmark{name = "carpspawn"},/turf/space,/area/space)
 "aad" = (/turf/space,/area/syndicate_station/northeast)
